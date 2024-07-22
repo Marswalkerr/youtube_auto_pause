@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Pause/Resume YouTube",
+    "version": "1.0",
+    "description": "Pauses YouTube videos when the tab is unfocused and resumes when refocused.",
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon16.png"
+        }
+    }
+}
